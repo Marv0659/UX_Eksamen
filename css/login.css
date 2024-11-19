@@ -1,0 +1,40 @@
+@import url(./varibles.css);
+
+h1{
+    text-align:center;
+}
+
+.login-form{
+    display: grid;
+    >section{
+        display: grid;
+        gap: 0.2rem;
+        margin-bottom: 0.8rem;
+        label{
+            font-size: 1.2rem;
+
+        }
+        input{
+            padding: 0.5rem;
+            border: 1px solid var(--borderGray);
+            border-radius: 0.2rem;
+        }
+    }
+    input[type="submit"]{
+        background-color: var(--eminence);
+        color: var(--almostWhite);
+        border: none;
+        border-radius: 0.2rem;
+        padding: 0.6rem;
+    }
+    
+}
+
+.no-account{
+    margin-top: 0.2rem;
+    text-align: center;
+    a{
+        color: var(--eminence);
+        text-decoration: none;
+    }
+}

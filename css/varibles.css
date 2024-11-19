@@ -1,6 +1,30 @@
-:root{
-    --violet: #462255;
-    --almostBlack: #262626;
-    --almostWhite: #f2f2f2;
-    --eminence: #763497;
+:root {
+  --violet: #462255;
+  --almostBlack: #262626;
+  --almostWhite: #f2f2f2;
+  --eminence: #763497;
+}
+
+@font-face {
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  src: url();
+}
+
+@font-face {
+  font-family: "EB Garamond";
+  src: url();
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+}
+
+p,
+a {
+  font-family: "EB Garamond";
 }

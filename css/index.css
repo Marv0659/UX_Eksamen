@@ -1,0 +1,30 @@
+.hero-container {
+  background: url(../Imgs/HeroTest.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 15vh;
+  width: 100%;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  color: white;
+}
+
+.random-books {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-article {
+  max-width: 10rem;
+  padding: 1rem;
+  color: var(--almostWhite);
+  background-color: var(--almostBlack);
+  border-radius: 10px;
+}

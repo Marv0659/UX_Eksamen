@@ -1,4 +1,4 @@
-const baseUrl = "http://127.0.0.1:8080";
+import { BASE_URL } from "../js/common.js";
 
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -18,33 +18,28 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
   }
 
   // Prepare request body
-  const params = new URLSearchParams();
-  params.append("email", email);
-  params.append("password", password);
+  const formData = new FormData();
+  formData.append("email", email);
+  formData.append("password", password);
 
   // Make the fetch request
-  fetch(`${baseUrl}/users/login`, {
+  fetch(`${BASE_URL}/users/login`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: params,
+    body: formData,
   })
-   .then(response => response.json())
-    .then(data => {
-        console.log(data);
-        if (Object.keys(data).includes('user_id')) {
-            if(getCookie("role") === "admin") {
-                window.location.href = 'admin.html';
-            }
-            else{
-            window.location.href = 'index.html';
-            }
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      if (Object.keys(data).includes("user_id")) {
+        if (getCookie("role") === "admin") {
+          window.location.href = "admin.html";
         } else {
-            alert(data.error)
+          window.location.href = "index.html";
         }
-    }
-    )
+      } else {
+        alert(data.error);
+      }
+    })
     .catch((error) => {
       alert("Error:", error);
     });

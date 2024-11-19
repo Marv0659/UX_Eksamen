@@ -6,6 +6,12 @@
     --eminence: #763497;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @font-face {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   src: url();
@@ -22,10 +28,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+    font-family: "EB Garamond";
+  
 }
 
 p,
-a {
-  font-family: "EB Garamond";
+a,
+label,
+input {
+  font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
 }

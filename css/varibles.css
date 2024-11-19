@@ -1,8 +1,9 @@
-:root {
-  --violet: #462255;
-  --almostBlack: #262626;
-  --almostWhite: #f2f2f2;
-  --eminence: #763497;
+:root{
+    --violet: #462255;
+    --almostBlack: #262626;
+    --borderGray: #c5c3c3;
+    --almostWhite: #f2f2f2;
+    --eminence: #763497;
 }
 
 @font-face {

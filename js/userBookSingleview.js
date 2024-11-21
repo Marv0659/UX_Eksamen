@@ -21,11 +21,15 @@ async function fetchBookDetails() {
 function displayBookDetails(book) {
   const singleviewContainer = document.querySelector(".singleview");
 
-  // if user is logged in, display the "loan" button
+  // if theres no cover image, use a default image
+  if (book.cover === "") {
+    book.cover = "../Imgs/pexels-stasknop-1340588.webp";
+  }
 
   // Populate the singleview div with book details
   singleviewContainer.innerHTML = `
     <h1>${book.title}</h1>
+    
     <img src="${book.cover}" alt="Cover of ${book.title}" class="book-cover"/>
     <p><strong>Author:</strong> ${book.author}</p>
     <p><strong>Publisher:</strong> ${book.publishing_company}</p>

@@ -1,30 +1,100 @@
 .hero-container {
-  background: url(../Imgs/HeroTest.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 15vh;
+  background: url(../Imgs/pexels-stasknop-1340588.webp) no-repeat center center;
+  background-size: cover; /* Makes the background image scale responsively */
+  height: 70vh;
   width: 100%;
+  display: flex; /* Enables flexbox */
+  justify-content: right; /* Centers text horizontally */
+  align-items: center; /* Centers text vertically */
+  position: relative; /* Ensures the overlay text is positioned relative to this container */
+  text-align: center; /* Centers text inside the container */
 }
 
 .text-overlay {
-  position: absolute;
-  top: 15%;
-  left: 50%;
   color: white;
+  font-size: 4rem; /* Adjust size for better visibility */
+  font-weight: bold;
+}
+
+.cta-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 9rem;
+}
+.cta {
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 }
 
 .random-books {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
-  align-items: center;
+  align-items: stretch; /* Ensures all cards stretch to the same height */
 }
 
 .book-article {
+  display: flex; /* Make the card a flex container */
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space out children evenly */
   max-width: 10rem;
+  height: 27rem; /* Consistent height for all cards */
   padding: 1rem;
   color: var(--almostWhite);
   background-color: var(--almostBlack);
   border-radius: 10px;
+}
+
+.book-cover img {
+  width: 100%;
+  height: 5rem;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.detailsBtn {
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  margin-top: auto; /* Push the button to the bottom of the card */
+}
+
+.book-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to fill available space */
+  justify-content: flex-start; /* Ensure content starts at the top */
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    height: 30vh; /* Adjust height for smaller screens */
+  }
+
+  .text-overlay {
+    font-size: 1.5rem; /* Adjust text size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-container {
+    height: 40vh; /* Further increase height for very small screens */
+  }
+
+  .text-overlay {
+    font-size: 1.2rem; /* Further adjust text size */
+  }
 }

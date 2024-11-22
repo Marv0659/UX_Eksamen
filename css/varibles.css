@@ -22,6 +22,13 @@
   src: url();
 }
 
+
+a{
+    text-decoration: none;
+    color: var(--almostBlack);
+}
+
+p,
 h1,
 h2,
 h3,
@@ -37,4 +44,12 @@ a,
 label,
 input {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+}
+h6,
+li{
+    color: var(--almostBlack);
+}
+
+img{
+    width: 100%;
 }

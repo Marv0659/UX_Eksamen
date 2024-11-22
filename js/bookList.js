@@ -1,7 +1,8 @@
 import { BASE_URL } from "./common.js";
 
-const NUM_BOOKS = 20;
+const NUM_BOOKS = 500;
 const bookCards = document.querySelector(".random-books"); // Use querySelector for class
+const searchInput = document.querySelector(".search-input");
 
 // Fetch the list of books from the server
 async function fetchRandomBooks(numberOfBooks) {
@@ -11,36 +12,55 @@ async function fetchRandomBooks(numberOfBooks) {
     const books = await response.json();
     console.log("Books:", books);
     displayBooks(books); // Call the display function with fetched books
+
+    // Add search functionality
+    setupSearch(books);
   } catch (error) {
     console.error("Error fetching books:", error);
   }
 }
 
-// Display fetched books in the DOM
+// Function to display books in the DOM
 function displayBooks(books) {
+  if (books.length === 0) {
+    bookCards.innerHTML = `<p class="no-results">No books found.</p>`;
+    return;
+  }
+
   bookCards.innerHTML = books
     .map(
       (book) => `
-    <article class="book-article">
-      <div class="book-cover">
-        <img src="./Imgs/HeroTest.png" alt="${book.title}" />
-      </div>
-      
-      <div class="book-content">
-      <h3>${book.title}</h3>
-      <p><strong>Author:</strong> ${book.author}</p>
-      <p><strong>Publisher:</strong> ${book.publishing_company}</p>
-      <p><strong>Year:</strong> ${book.publishing_year}</p>
-      <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}">Details</a>
-      </div>
+      <article class="book-article">
+        <div class="book-cover">
+          <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+        </div>
+        <div class="book-content">
+          <h3>${book.title}</h3>
+          <p><strong>Author:</strong> ${book.author}</p>
+          <p><strong>Publisher:</strong> ${book.publishing_company}</p>
+          <p><strong>Year:</strong> ${book.publishing_year}</p>
+          <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}">Details</a>
+        </div>
       </article>
-  `
+    `
     )
     .join("");
 }
 
-// Trigger the fetch
+// Function to set up search functionality
+function setupSearch(books) {
+  searchInput.addEventListener("input", (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+
+    // Filter books based on search term
+    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(searchTerm));
+
+    // Display filtered books
+    displayBooks(filteredBooks);
+  });
+}
+
+// Trigger the fetch and setup
 fetchRandomBooks(NUM_BOOKS);
 
-//export
-export { fetchRandomBooks, displayBooks }; // Export the functions for testing
+export { fetchRandomBooks, displayBooks };

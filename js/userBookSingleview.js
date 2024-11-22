@@ -29,7 +29,7 @@ function userLoanBook() {
     .then((response) => response.json())
     .then((data) => {
       if (data.status === "ok") {
-        alert("Book loaned successfully!");
+        ShowLoanSuccessMessage();
       } else {
         alert(data.error || "Unable to loan the book.");
       }
@@ -79,6 +79,23 @@ function displayBookDetails(book) {
   if (loanButton && isLoggedIn()) {
     loanButton.addEventListener("click", userLoanBook);
   }
+}
+
+function ShowLoanSuccessMessage() {
+  const email = getCookie("email"); // Get the user's email from cookies
+
+  const successMessage = `
+    <div class="notification">
+      <h2>Success!</h2>
+      <p>Your loan request has been processed successfully.</p>
+      <p>An access link to the e-book will be sent to your email address: <strong>${email}</strong>.</p>
+      <p><a class="loan-btn" href="index.html">Go back to the home page</a
+    </div>
+  `;
+
+  // Replace the main content with the notification
+  const singleviewContainer = document.querySelector(".singleview");
+  singleviewContainer.innerHTML = successMessage;
 }
 
 // Fetch and display book details when the page loads

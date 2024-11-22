@@ -24,6 +24,17 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: var(--medium-padding);
+  padding: var(--standard-padding) var(--medium-padding);
+  border-radius: 5px;
+  margin-top: var(--medium-padding);
+}
+
 .loan-btn {
   background-color: var(--eminence);
   color: var(--almostWhite);

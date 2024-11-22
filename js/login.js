@@ -1,5 +1,11 @@
 import { BASE_URL } from "../js/common.js";
 
+function getCookie(name) {
+  const value = `; ${document.cookie}`;
+  const parts = value.split(`; ${name}=`);
+  if (parts.length === 2) return parts.pop().split(";").shift();
+}
+
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.querySelector("#email").value;
@@ -9,12 +15,6 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
     document.cookie = `role=admin`;
   } else {
     document.cookie = `role=user`;
-  }
-
-  function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(";").shift();
   }
 
   // Prepare request body

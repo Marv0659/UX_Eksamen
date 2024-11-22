@@ -1,5 +1,46 @@
-img {
-  width: 50%;
-  height: 100%;
-  object-fit: cover;
+@import url("./varibles.css");
+
+.singleviewContainer {
+  max-width: var(--content-max-width);
+  margin: auto;
+  padding: var(--big-padding);
+  background-color: var(--formBackground);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.singleview {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--medium-padding);
+}
+
+.singleview img {
+  max-width: 50%;
+  margin-bottom: var(--medium-padding);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loan-btn {
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+  padding: var(--standard-padding) var(--medium-padding);
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loan-btn:hover {
+  background-color: var(--violet);
+}
+
+.login-message {
+  font-size: 1rem;
+  color: var(--almostBlack);
+  margin-top: var(--medium-padding);
 }

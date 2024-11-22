@@ -1,7 +1,7 @@
 import { BASE_URL } from "./common.js";
 
-const NUM_BOOKS = 10;
-const bookCards = document.querySelector(".bookCards"); // Use querySelector for class
+const NUM_BOOKS = 20;
+const bookCards = document.querySelector(".random-books"); // Use querySelector for class
 
 // Fetch the list of books from the server
 async function fetchRandomBooks(numberOfBooks) {
@@ -21,12 +21,19 @@ function displayBooks(books) {
   bookCards.innerHTML = books
     .map(
       (book) => `
-    <article class="book-card">
+    <article class="book-article">
+      <div class="book-cover">
+        <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+      </div>
+      
+      <div class="book-content">
       <h3>${book.title}</h3>
       <p><strong>Author:</strong> ${book.author}</p>
       <p><strong>Publisher:</strong> ${book.publishing_company}</p>
       <p><strong>Year:</strong> ${book.publishing_year}</p>
-    </article>
+      <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}">Details</a>
+      </div>
+      </article>
   `
     )
     .join("");

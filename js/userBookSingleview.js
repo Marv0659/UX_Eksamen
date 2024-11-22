@@ -1,8 +1,21 @@
-import { BASE_URL, loggedUserID } from "./common.js";
-
+import { BASE_URL } from "./common.js";
+import { getCookie } from "./cookieUtils.js";
 // Get the book ID from the URL parameters
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
+
+function isLoggedIn() {
+  return !!getCookie("email"); // Returns true if the email cookie exists
+}
+
+// Use the login status in your logic
+if (isLoggedIn()) {
+  console.log("User is logged in");
+} else {
+  console.log("User is not logged in");
+  // Optionally, redirect to the login page
+  //window.location.href = "login.html";
+}
 
 // Function to fetch and display book details
 async function fetchBookDetails() {
@@ -26,6 +39,8 @@ function displayBookDetails(book) {
     book.cover = "../Imgs/pexels-stasknop-1340588.webp";
   }
 
+  const loanBtn = isLoggedIn() ? `<button class="loan-btn">Loan</button>` : `<a href="login.html" class="loan-btn">Login to loan</a>`;
+
   // Populate the singleview div with book details
   singleviewContainer.innerHTML = `
     <h1>${book.title}</h1>
@@ -34,6 +49,7 @@ function displayBookDetails(book) {
     <p><strong>Author:</strong> ${book.author}</p>
     <p><strong>Publisher:</strong> ${book.publishing_company}</p>
     <p><strong>Year:</strong> ${book.publishing_year}</p>
+    ${loanBtn}
   `;
 }
 

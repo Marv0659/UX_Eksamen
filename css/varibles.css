@@ -1,24 +1,23 @@
-:root{
+:root {
   /* colors */
-    --violet: #462255;
-    --almostBlack: #262626;
-    --borderGray: #c5c3c3;
-    --almostWhite: #f2f2f2;
-    --eminence: #763497;
-    --formBackground: #f9f9f9;
-    /* sizes */
-    --content-max-width: 1200px;
-    --standard-padding: 0.5rem;
-    --medium-padding: 1rem;
-    --big-padding: 2rem;
-    --tiny-padding: 0.25rem;
+  --violet: #462255;
+  --almostBlack: #262626;
+  --borderGray: #c5c3c3;
+  --almostWhite: #f2f2f2;
+  --eminence: #763497;
+  --formBackground: #f9f9f9;
+  /* sizes */
+  --content-max-width: 1200px;
+  --standard-padding: 0.5rem;
+  --medium-padding: 1rem;
+  --big-padding: 2rem;
+  --tiny-padding: 0.25rem;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
@@ -31,10 +30,9 @@
   src: url();
 }
 
-
-a{
-    text-decoration: none;
-    color: var(--almostBlack);
+a {
+  text-decoration: none;
+  color: var(--almostBlack);
 }
 
 p,
@@ -44,8 +42,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "EB Garamond";
-  
+  font-family: "EB Garamond";
 }
 
 p,
@@ -55,10 +52,10 @@ input {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
 }
 h6,
-li{
-    color: var(--almostBlack);
+li {
+  color: var(--almostBlack);
 }
 
-img{
-    width: 100%;
+img {
+  width: 100%;
 }

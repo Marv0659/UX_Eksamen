@@ -1,6 +1,6 @@
 import { BASE_URL } from "./common.js";
 
-const NUM_BOOKS = 4;
+const NUM_BOOKS = 8;
 
 // index
 const randomBooks = document.querySelector(".random-books"); // Use querySelector for class
@@ -22,12 +22,18 @@ function displayBooks(books) {
     .map(
       (book) => `
     <article class="book-article">
+      <div class="book-cover">
+        <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+      </div>
+      
+      <div class="book-content">
       <h3>${book.title}</h3>
       <p><strong>Author:</strong> ${book.author}</p>
       <p><strong>Publisher:</strong> ${book.publishing_company}</p>
       <p><strong>Year:</strong> ${book.publishing_year}</p>
-      <a href="user-book-singleview.html?id=${book.book_id}">Details</a>
-    </article>
+      <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}">Details</a>
+      </div>
+      </article>
   `
     )
     .join("");

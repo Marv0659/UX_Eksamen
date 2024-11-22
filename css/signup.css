@@ -13,13 +13,11 @@ body{
 main{
     padding-inline:1rem;
      display: grid;
-     min-height: 100%;
-     align-items: center;
 
 
 }
 
-.login-form{
+.signup-form{
     display: grid;
     
 
@@ -47,13 +45,16 @@ main{
     
 }
 
-.login-form-wrapper {
+.signup-form-wrapper{
     background-color: var(--formBackground);
     padding: 2rem;
     border-radius: 0.5rem;
+    margin-block: 1rem;
     max-width: 30rem;  /* or any comfortable width for your form */
     margin-inline: auto;
     width: 100%;
+  
+
 }
 
 .no-account{
@@ -64,4 +65,3 @@ main{
         text-decoration: none;
     }
 }
-

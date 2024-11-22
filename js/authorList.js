@@ -7,7 +7,11 @@ async function getAuthors(){
         }
 
         const data = await response.json();
-        return data
+        // Add image number to each author object when first loaded
+        return data.map(author => ({
+            ...author, 
+            imageNumber: Math.floor(Math.random() * 10) + 1
+        }));
     }
     catch (error){
         console.error("Fetch error: " + error)
@@ -15,60 +19,38 @@ async function getAuthors(){
     }
 }
 
-
-
-// async function findBooks() {
-//     try {
-//         const booksData = [];
+function renderAuthors(authors) {
+    const authorsContainer = document.querySelector(".authors_container");
+    authorsContainer.innerHTML = authors.map(author => {        
         
-//         for (const author of authors) {
-//             try {
-//                 const response = await fetch(`http://localhost:8080/books?a=${author.author_id}`);
-                
-//                 if (!response.ok) {
-//                     throw new Error(`HTTP error! status: ${response.status}`);
-//                 }
-                
-//                 const data = await response.json();
-//                 booksData.push(data);
-//             } catch (error) {
-//                 console.error(`Error fetching books for author ${author.author_id}:`, error);
-//                 // Handle error as needed
-//             }
-//         }
-
-//         console.log(booksData);
-//         return booksData;
-
-//     } catch (error) {
-//         console.error("Error in findBooks:", error);
-//         throw error;
-//     }
-// }
-
-function generateNumb(){
-    return Math.floor(Math.random() * 100) + 1;
-}
-
-
-async function showAuthors(){
-
-    const authors = await getAuthors()
-
-    const allHTML = authors.map(author => 
-        `
-        <article>
-            <img src="assets/imgs/authors/profile_${generateNumb()}.webp">
-            <h2>${author.author_name}</h2>
-            <a></a>
+        return `
+        <article class="author_card">
+            <img src="../imgs/avatars/profile_${author.imageNumber}.webp">
+           <div>
+                <h2>${author.author_name}</h2>
+                <a href="author-Singleview.html?id=${author.author_id}&img=${author.imageNumber}">Read more</a>
+           </div>
         </article>
         `
-
-    ).join("");
-    document.querySelector(".authors_container").innerHTML += allHTML
-    console.log(authors)
+    }).join("");
 }
 
+async function initializeAuthorsPage(){
+    try {
+        const authors = await getAuthors();
+        renderAuthors(authors);
 
-showAuthors()
-findBooks()
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredAuthors = authors.filter(author => 
+                author.author_name.toLowerCase().includes(searchTerm)
+            );
+            renderAuthors(filteredAuthors);
+        });
+    } catch (error) {
+        console.error("Error initializing authors page:", error);
+    }
+}
+
+initializeAuthorsPage()

@@ -1,0 +1,39 @@
+@import url("varibles.css");
+
+#author_container{
+        display: grid;
+
+        max-width: 1200px;
+        margin-inline: auto;
+        gap: 0.5rem;
+
+        img{
+            border-radius: 0.5rem;
+        }
+
+        h2{
+            font-size: 2rem;
+            color: var(--violet);
+        }
+
+        p{
+            font-size: 1.1rem;
+        }
+        div{
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+    
+        @media(min-width: 800px) {
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .author_info{
+
+        }
+
+}

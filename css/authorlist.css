@@ -1,0 +1,63 @@
+@import url("varibles.css");
+
+
+body{
+    background-color: var(--almostWhite);
+}
+
+
+.authors_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.author_card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background-color: var(--almostWhite);
+    
+
+
+  border: 1px solid #e0e0e0;
+  transition: transform 0.2s ease;
+
+    img{
+        border-radius: 0.5rem;
+    }
+
+    a{
+        padding: 0.5rem 1rem;
+        background-color: var(--eminence);
+        width: fit-content;
+        color: var(--almostWhite);
+        border-radius: 0.5rem;
+    }
+
+    div{
+        padding: 0.5rem;
+        display: grid;
+        gap: 1rem;
+    }
+}
+
+form{
+    display: grid;
+    place-self: center;
+    margin-bottom: 2rem;
+
+    input{
+        padding: 0.5rem 1rem;
+        background-color: var(--almostWhite);
+        border-radius: 0.5rem;
+        border: solid 1px var(--violet);
+    }
+}
+
+.author_card:hover {
+  transform: translateY(-4px);
+
+}

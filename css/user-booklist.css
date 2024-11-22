@@ -7,6 +7,30 @@ main {
   gap: 2rem;
 }
 
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchContainer input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid var(--almostBlack);
+}
+
+.searchContainer button {
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+  cursor: pointer;
+}
+
+.searchContainer label {
+  font-size: 1.5rem;
+}
 .randomBooksContainer {
   max-width: var(--content-max-width);
 }

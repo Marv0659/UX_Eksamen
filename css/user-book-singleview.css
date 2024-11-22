@@ -6,14 +6,14 @@
   padding: var(--big-padding);
   background-color: var(--formBackground);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .singleview {
   text-align: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-around;
   gap: var(--medium-padding);
 }
 
@@ -22,6 +22,13 @@
   margin-bottom: var(--medium-padding);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: var(--medium-padding);
 }
 
 .notification {

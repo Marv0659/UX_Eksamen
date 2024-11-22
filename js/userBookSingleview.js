@@ -66,12 +66,16 @@ function displayBookDetails(book) {
 
   // Populate the singleview container with book details and the button
   singleviewContainer.innerHTML = `
-    <h1>${book.title}</h1>
+    
     <img src="${book.cover}" alt="Cover of ${book.title}" class="book-cover" />
-    <p><strong>Author:</strong> ${book.author}</p>
-    <p><strong>Publisher:</strong> ${book.publishing_company}</p>
-    <p><strong>Year:</strong> ${book.publishing_year}</p>
-    ${loanBtn}
+    <div class="book-info">
+      <h1>${book.title}</h1>
+      <p><strong>Author:</strong> ${book.author}</p>
+      <p><strong>Publisher:</strong> ${book.publishing_company}</p>
+      <p><strong>Year:</strong> ${book.publishing_year}</p>
+      ${loanBtn}
+    </div>
+    
   `;
 
   // Add event listener to the "Loan" button if it exists

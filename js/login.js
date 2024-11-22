@@ -34,6 +34,7 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
         if (getCookie("role") === "admin") {
           window.location.href = "admin.html";
         } else {
+          document.cookie = `user_id=${data.user_id};path=/;samesite=strict`;
           window.location.href = "index.html";
         }
       } else {

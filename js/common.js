@@ -28,6 +28,11 @@ try {
       burgerNav.classList.toggle("active")
       burger.classList.toggle("hidden")
       cross.classList.toggle("hidden")
+
+      if(getCookie("role" == "user")){
+        console.log(getCookie("role"))
+      }
+
     } catch (error) {
       console.error("Error toggling navigation:", error.message)
       // You could add user feedback here, like:

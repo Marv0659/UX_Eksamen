@@ -184,7 +184,7 @@ footer{
         justify-content: center;
         margin-bottom: var(--standard-padding);
         img{
-            width: 10%;
+            width: 100%;
 
             max-width: var(--big-padding);
 

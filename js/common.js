@@ -9,8 +9,31 @@ export const loggedUserID = () => {
   return sessionStorage.getItem("food_repo_user_id") || 0;
 };
 
-document.querySelector(".burgertoggle").addEventListener("click", () =>{
-  document.querySelector(".burgernav").classList.toggle("active")
-  document.querySelector(".burger").classList.toggle("hidden")
-  document.querySelector(".cross").classList.toggle("hidden")
-})
+try {
+  const burgerToggle = document.querySelector(".burgertoggle")
+  if (!burgerToggle) {
+    throw new Error("Burger toggle button not found")
+  }
+
+  burgerToggle.addEventListener("click", () => {
+    try {
+      const burgerNav = document.querySelector(".burgernav")
+      const burger = document.querySelector(".burger")
+      const cross = document.querySelector(".cross")
+
+      if (!burgerNav || !burger || !cross) {
+        throw new Error("Required navigation elements not found")
+      }
+
+      burgerNav.classList.toggle("active")
+      burger.classList.toggle("hidden")
+      cross.classList.toggle("hidden")
+    } catch (error) {
+      console.error("Error toggling navigation:", error.message)
+      // You could add user feedback here, like:
+      // alert("Sorry, there was a problem with the navigation menu")
+    }
+  })
+} catch (error) {
+  console.error("Error setting up burger menu:", error.message)
+}

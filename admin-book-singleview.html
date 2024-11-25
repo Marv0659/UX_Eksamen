@@ -6,10 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user-book-singleview.css">
     <script type="module" src="./js/adminBookSingleview.js"></script>
+    <script type="module" src="./js/common.js"></script>
+
     <title>Id</title>
 </head>
 
 <body>
+    <header>
+        <div class="top_elements">
+            <div>
+                <a href="index.html">PAGEFLOW</a>
+            </div>
+
+            <nav class="headernav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booklist.html">Books</a></li>
+                    <li><a href="authorlist.html">Authors</a></li>
+                    <li><a class="login" href="login.html">Login</a></li>
+                    <li><a class="signup" href="signup.html">Signup</a></li>
+                </ul>
+            </nav>
+            <button class="burgertoggle">
+                <img class="burger" src="Imgs/menu.svg" alt="open burger menu">
+                <img class="cross hidden" src="Imgs/cross.svg" alt="close burger menu">
+            </button>
+        </div>
+        <nav class="burgernav closed">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booklist.html">Books</a></li>
+                <li><a href="authorlist.html">Authors</a></li>
+                <li><a class="burger_login" href="login.html">Login</a></li>
+                <li><a class="burger_signup" href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <section class="singleviewContainer">
         <div class="singleview">

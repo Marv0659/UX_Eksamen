@@ -1,21 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module" src="./js/signup.js"></script>
     <link rel="stylesheet" href="./css/signup.css">
+    <script type="module" src="./js/common.js"></script>
+
     <title>Signup</title>
 </head>
+
 <body>
     <header>
-        Her er header
+        <div class="top_elements">
+            <div>
+                <a href="index.html">PAGEFLOW</a>
+            </div>
+
+            <nav class="headernav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booklist.html">Books</a></li>
+                    <li><a href="authorlist.html">Authors</a></li>
+                    <li><a class="login" href="login.html">Login</a></li>
+                    <li><a class="signup" href="signup.html">Signup</a></li>
+                </ul>
+            </nav>
+            <button class="burgertoggle">
+                <img class="burger" src="Imgs/menu.svg" alt="open burger menu">
+                <img class="cross hidden" src="Imgs/cross.svg" alt="close burger menu">
+            </button>
+        </div>
+        <nav class="burgernav closed">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booklist.html">Books</a></li>
+                <li><a href="authorlist.html">Authors</a></li>
+                <li><a class="burger_login" href="login.html">Login</a></li>
+                <li><a class="burger_signup" href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
     </header>
-       
-    
+
+
     <main>
-       <div class="signup-form-wrapper">
-         <h1>SIGNUP</h1>
+        <div class="signup-form-wrapper">
+            <h1>SIGNUP</h1>
             <form class="signup-form">
                 <section>
                     <label for="email">Email</label>
@@ -47,9 +78,10 @@
                 </section>
                 <input type="submit" value="Sign up">
             </form>
-                    <p class="no-account">Already got an account? <a href="./login.html">Login!</a></p>
+            <p class="no-account">Already got an account? <a href="./login.html">Login!</a></p>
 
-       </div>
+        </div>
     </main>
 </body>
+
 </html>

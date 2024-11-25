@@ -1,13 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/admin.css">
+    <script type="module" src="./js/common.js"></script>
+
     <title>Admin dashboard</title>
 </head>
+
 <body>
-    <header></header>
+    <header>
+        <div class="top_elements">
+            <div>
+                <a href="index.html">PAGEFLOW</a>
+            </div>
+
+            <nav class="headernav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booklist.html">Books</a></li>
+                    <li><a href="authorlist.html">Authors</a></li>
+                    <li><a class="login" href="login.html">Login</a></li>
+                    <li><a class="signup" href="signup.html">Signup</a></li>
+                </ul>
+            </nav>
+            <button class="burgertoggle">
+                <img class="burger" src="Imgs/menu.svg" alt="open burger menu">
+                <img class="cross hidden" src="Imgs/cross.svg" alt="close burger menu">
+            </button>
+        </div>
+        <nav class="burgernav closed">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booklist.html">Books</a></li>
+                <li><a href="authorlist.html">Authors</a></li>
+                <li><a class="burger_login" href="login.html">Login</a></li>
+                <li><a class="burger_signup" href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
         <h1>Admin dashboard</h1>
         <ul>
@@ -19,4 +52,5 @@
     </main>
     <footer></footer>
 </body>
+
 </html>

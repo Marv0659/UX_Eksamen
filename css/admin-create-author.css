@@ -1,0 +1,60 @@
+@import url(./varibles.css);
+
+h1{
+    text-align:center;
+    align-self: center;
+    margin-bottom: var(--medium-padding);
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+}
+main{
+    padding-inline:1rem;
+     display: grid;
+     min-height: 100%;
+     align-items: center;
+
+
+}
+
+.create-author-form{
+    display: grid;
+    
+
+    >section{
+        display: grid;
+        gap: 0.2rem;
+        margin-bottom: 0.8rem;
+        label{
+            font-size: 1.2rem;
+
+        }
+        input{
+            padding: 0.5rem;
+            border: 1px solid var(--borderGray);
+            border-radius: 0.2rem;
+        }
+    }
+    input[type="submit"]{
+        background-color: var(--eminence);
+        color: var(--almostWhite);
+        border: none;
+        border-radius: 0.2rem;
+        padding: 0.6rem;
+    }
+    
+}
+
+.create-author-form-wrapper {
+    background-color: var(--formBackground);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    max-width: 30rem;  /* or any comfortable width for your form */
+    margin-inline: auto;
+    width: 100%;
+}
+
+

@@ -1,0 +1,26 @@
+@import url(./varibles.css);
+h1{
+    text-align:center;
+
+    margin-block: var(--big-padding);
+
+}
+ul{
+    display: grid;
+    gap: var(--big-padding);
+}
+a{
+    display: block;
+    text-decoration: none;
+    background-color: var(--eminence);
+    color: var(--almostWhite);
+    padding: var(--standard-padding);
+    width: 10rem;
+
+}
+
+li{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}

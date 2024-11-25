@@ -33,7 +33,7 @@ document.querySelector(".signup-form").addEventListener("submit", (e) => {
       .then((data) => {
         console.log(data);
         if (Object.keys(data).includes("user_id")) {
-          window.location.href = "index.html";
+          window.location.href = "login.html";
         } else {
           alert(data.error);
         }

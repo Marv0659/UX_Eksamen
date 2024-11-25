@@ -1,10 +1,6 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, getCookie } from "../js/common.js";
 
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(";").shift();
-}
+
 
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();

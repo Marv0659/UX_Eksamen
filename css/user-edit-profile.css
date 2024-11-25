@@ -1,0 +1,46 @@
+@import url("./varibles.css");
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--main-bg-color);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--form-bg-color);
+}
+
+form h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--main-text-color);
+}
+
+form input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid var(--main-text-color);
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--violet);
+  color: var(--almostWhite);
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+}

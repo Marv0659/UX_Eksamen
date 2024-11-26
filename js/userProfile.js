@@ -1,5 +1,5 @@
 import { BASE_URL } from "./common.js";
-import { getCookie } from "./cookieUtils.js";
+import { getCookie, clearAllCookies } from "./cookieUtils.js";
 
 console.log(getCookie("user_id"));
 
@@ -21,8 +21,8 @@ async function fetchUserDetails() {
 }
 
 // Function to display user details in the DOM
-function displayUserDetails(user) {
-  const profileContainer = document.querySelector(".profile");
+/* function displayUserDetails(user) {
+  const profileContainer = document.querySelector(".profile_container");
   profileContainer.innerHTML = `
     <h2>Hello ${user.first_name} ${user.last_name}!</h2>
     <p>Email: ${user.email}</p>
@@ -32,7 +32,7 @@ function displayUserDetails(user) {
     <p>Member since: ${user.membership_date}</p>
     <div class="profile-actions">
       <a class="edit-btn" href="user-edit-profile.html">Edit Profile</a>
-      <button class="delete-btn">Delete Profile</button>
+      
     </div>
   `;
 
@@ -62,35 +62,33 @@ function displayUserDetails(user) {
       alert(`An error occurred: ${error.message}`);
     }
   });
-}
+} */
 
 // Fetch and display user details
 fetchUserDetails();
-const user_id = getCookie("user_id")
+const user_id = getCookie("user_id");
 
-async function getProfile(){
-        try{
-        const response = await fetch(BASE_URL + "/users/" + user_id);
+async function getProfile() {
+  try {
+    const response = await fetch(BASE_URL + "/users/" + user_id);
 
-        if(!response.ok){
-            throw new Error(`HTTP error! status: ${response.status}`)
-        }
-
-        const data = await response.json();
-        return data
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-    catch (error){
-        console.error("Fetch error: " + error)
-        throw error
-    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error: " + error);
+    throw error;
+  }
 }
 
-async function drawProfile(){
+async function drawProfile() {
+  const user = await getProfile();
 
-    const user = await getProfile()
-
-    console.log(user)
-    const profile = `
+  console.log(user);
+  const profile = `
     <h2>Welcome ${user.first_name} ${user.last_name}</h2>
     <dl>
     <div>
@@ -122,10 +120,37 @@ async function drawProfile(){
         <dd>${user.membership_date}</dd>
     </div>
     </dl>
-    `
+    `;
 
-    document.querySelector(".profile_container").innerHTML += profile
+  const deleteButton = document.querySelector(".delete-btn");
+  deleteButton.addEventListener("click", async () => {
+    const userId = getCookie("user_id");
+    if (!userId) {
+      console.error("User ID not found in cookies.");
+      return;
+    }
+    try {
+      const response = await fetch(`${BASE_URL}/users/${userId}`, {
+        method: "DELETE",
+      });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      const data = await response.json();
+      console.log(data);
+      if (data.status === "ok") {
+        // delete cookie
+        clearAllCookies();
+        alert("User deleted successfully");
+        window.location.href = "login.html";
+      } else {
+        alert(data.error || "Unexpected response format");
+      }
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      alert(`An error occurred: ${error.message}`);
+    }
+  });
 
+  document.querySelector(".profile_container").innerHTML += profile;
 }
 
-drawProfile()
+drawProfile();

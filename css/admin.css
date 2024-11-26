@@ -27,6 +27,9 @@ main ul li a{
     
     
 }
+main #page-content{
+    justify-content: center;
+}
 
 main li{
     display: grid;

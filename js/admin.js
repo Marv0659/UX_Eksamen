@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 3000);
   } else {
     // User is authorized, show the page content
-    pageContent.style.display = "block";
+    pageContent.style.display = "grid";
   }
 });
 

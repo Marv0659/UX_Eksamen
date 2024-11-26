@@ -1,5 +1,66 @@
 import { BASE_URL, getCookie } from "./common.js";
 
 
-console.log(getCookie("role"))
+const user_id = getCookie("user_id")
 
+async function getProfile(){
+        try{
+        const response = await fetch(BASE_URL + "/users/" + user_id);
+
+        if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status}`)
+        }
+
+        const data = await response.json();
+        return data
+    }
+    catch (error){
+        console.error("Fetch error: " + error)
+        throw error
+    }
+}
+
+async function drawProfile(){
+
+    const user = await getProfile()
+
+    console.log(user)
+    const profile = `
+    <h2>Welcome ${user.first_name} ${user.last_name}</h2>
+    <dl>
+    <div>
+        <dt>First name</dt>
+        <dd>${user.first_name}</dd>
+    </div>
+    <div>
+        <dt>Last name</dt>
+        <dd>${user.last_name}</dd>
+    </div>
+    <div>
+        <dt>E-mail</dt>
+        <dd>${user.email}</dd>
+    </div>
+    <div>
+        <dt>Phone number</dt>
+        <dd>${user.phone_number}</dd>
+    </div>
+    <div>
+        <dt>Address</dt>
+        <dd>${user.address}</dd>
+    </div>
+    <div>
+        <dt>Birth date</dt>
+        <dd>${user.birth_date}</dd>
+    </div>
+    <div>
+        <dt>Membership created at</dt>
+        <dd>${user.membership_date}</dd>
+    </div>
+    </dl>
+    `
+
+    document.querySelector(".profile_container").innerHTML += profile
+
+}
+
+drawProfile()

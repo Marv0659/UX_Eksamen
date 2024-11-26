@@ -1,0 +1,13 @@
+@import url("./varibles.css");
+
+dl{
+    display: grid;
+    
+    dt{
+        font-weight: 800;
+        color: var(--violet);
+    }
+    dd{
+        padding-left: var(--standard-padding);
+    }
+}

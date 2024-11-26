@@ -1,4 +1,5 @@
-import { getCookie, showToast } from "./common.js";
+import { showToast } from "./common.js";
+import { getCookie } from "./cookieUtils.js";
 
 
 

@@ -1,4 +1,5 @@
-import { BASE_URL, getCookie } from "./common.js";
+import { BASE_URL } from "./common.js";
+import { getCookie } from "./cookieUtils.js";
 
 console.log(getCookie("user_id"));
 

@@ -1,4 +1,5 @@
-import { BASE_URL, getCookie } from "./common.js";
+import { BASE_URL } from "./common.js";
+import { getCookie } from "./cookieUtils.js";
 
 const NUM_BOOKS = 500;
 const bookCards = document.querySelector(".random-books"); // Use querySelector for class

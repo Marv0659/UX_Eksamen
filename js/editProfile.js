@@ -1,4 +1,5 @@
-import { BASE_URL, getCookie } from "./common.js";
+import { BASE_URL } from "./common.js";
+import { getCookie } from "./cookieUtils.js";
 
 document.querySelector(".edit-profile").addEventListener("submit", async (e) => {
   e.preventDefault();

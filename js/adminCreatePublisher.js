@@ -1,4 +1,5 @@
-import { BASE_URL, getCookie, showToast } from "../js/common.js";
+import { BASE_URL, showToast } from "../js/common.js";
+import { getCookie } from "../js/cookieUtils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const pageContent = document.getElementById("page-content");

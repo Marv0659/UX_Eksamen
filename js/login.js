@@ -1,4 +1,5 @@
-import { BASE_URL, getCookie } from "../js/common.js";
+import { BASE_URL } from "../js/common.js";
+import { getCookie } from "../js/cookieUtils.js";
 
 if (getCookie("role")){
     alert("You are already logged in.");

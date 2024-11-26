@@ -33,7 +33,7 @@ function displayBooks(books) {
       .map(
         (book) => `
       <article class="book-article">
-          <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+          <img src="./Imgs/pexels-stasknop-1340588.webp" alt="${book.title}" />
         <div class="book-content">
           <h3>${book.title}</h3>
           <p><strong>Author:</strong> ${book.author}</p>
@@ -50,9 +50,8 @@ function displayBooks(books) {
       .map(
         (book) => `
       <article class="book-article">
-        <div class="book-cover">
           <img src="./Imgs/pexels-stasknop-1340588.webp" alt="${book.title}" />
-        </div>
+        
         <div class="book-content">
           <h3>${book.title}</h3>
           <p><strong>Author:</strong> ${book.author}</p>

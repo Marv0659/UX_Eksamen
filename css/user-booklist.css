@@ -74,7 +74,7 @@ main {
   border: 1px solid #e0e0e0;
 }
 
-.book-cover img {
+img {
   width: 100%;
   border-radius: 10px;
   object-fit: cover;

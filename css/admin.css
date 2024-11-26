@@ -33,3 +33,27 @@ li{
     justify-content: center;
     text-align: center;
 }
+
+.toast{
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    background-color: var(--almostBlack);
+    color: var(--almostWhite);
+    padding: 10px 20px;
+    border-radius: var(--tiny-padding);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+/* toast.style.position = "fixed";
+  toast.style.bottom = "20px";
+  toast.style.right = "20px";
+  toast.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+  toast.style.color = "white";
+  toast.style.padding = "10px 20px";
+  toast.style.borderRadius = "5px";
+  toast.style.boxShadow = "0px 4px 6px rgba(0, 0, 0, 0.1)";
+  toast.style.zIndex = "1000";
+  toast.style.opacity = "0";
+  toast.style.transition = "opacity 0.3s ease"; */

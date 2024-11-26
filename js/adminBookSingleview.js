@@ -1,5 +1,23 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToast } from "./common.js";
 import { getCookie } from "./cookieUtils.js";
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (!role || role !== "admin") {
+    // User is not authorized
+    showToast("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = role ? "index.html" : "login.html";
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "block";
+  }
+});
 
 // Get the book ID from the URL parameters
 const urlParams = new URLSearchParams(window.location.search);

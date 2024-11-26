@@ -1,4 +1,35 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, getCookie, showToast } from "../js/common.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (!role || role !== "admin") {
+    // User is not authorized
+    showToast("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = role ? "index.html" : "login.html";
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "block";
+  }
+});
+
+if (getCookie("role")) {
+  if (getCookie("role") !== "admin") {
+    alert("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 0);
+  }
+} else {
+  alert("You are not authorized to view this page.");
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 0);
+}
 
 document.querySelector(".create-author-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -24,12 +55,6 @@ document.querySelector(".create-author-form").addEventListener("submit", (e) => 
       } else {
         alert("Author created successfully");
       }
-
-      //   if (Object.keys(data).includes("book_id")) {
-      //     alert("Book created successfully");
-      //   } else if (Object.keys(data).includes("error")) {
-      //     alert(data.error);
-      //   }
     })
     .catch((error) => {
       alert("Error:", error);

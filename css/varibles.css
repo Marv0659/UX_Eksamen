@@ -25,11 +25,13 @@
 @font-face {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   src: url();
+  font-display:swap;
 }
 
 @font-face {
   font-family: "EB Garamond";
   src: url();
+  font-display:swap;
 }
 
 a {
@@ -45,6 +47,7 @@ h4,
 h5,
 h6 {
   font-family: "EB Garamond";
+  font-display:swap;
 }
 
 p,
@@ -52,6 +55,7 @@ a,
 label,
 input {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-display:swap;
 }
 h6,
 li {
@@ -219,4 +223,20 @@ footer {
       }
     }
   }
+}
+
+#page-content{
+  display: none;
+}
+.toast{
+    position: absolute;
+    bottom: 50%;
+    left: 40%;
+    background-color: var(--almostBlack);
+    color: var(--almostWhite);
+    padding: 10px 20px;
+    border-radius: var(--tiny-padding);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }

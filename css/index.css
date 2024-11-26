@@ -117,9 +117,10 @@ main {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-
+  max-width: 60rem;
   color: var(--almostWhite);
-  padding: 1rem;
+  padding: 2rem;
+  line-height: 1.75rem;
 }
 
 @media (max-width: 768px) {

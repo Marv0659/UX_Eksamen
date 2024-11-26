@@ -187,9 +187,11 @@ footer {
 
   .socials {
     display: flex;
-    gap: var(--standard-padding);
+    gap: var(--medium-padding);
     justify-content: center;
-    margin-bottom: var(--standard-padding);
+
+    
+    margin-block: var(--standard-padding);
     img {
       width: 100%;
 

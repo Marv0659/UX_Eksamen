@@ -77,6 +77,9 @@ try {
   console.error("Error setting up burger menu:", error.message)
 }
 
+
+}
+
 export function showToast(message, duration = 3000) {
   const toast = document.createElement("div");
   toast.setAttribute("class", "toast");
@@ -91,7 +94,6 @@ export function showToast(message, duration = 3000) {
       toast.remove();
     }, 300);
   }, duration);
-}
 }
 
 checkHeader()

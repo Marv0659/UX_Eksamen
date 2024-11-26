@@ -90,6 +90,7 @@ async function drawProfile() {
   console.log(user);
   const profile = `
     <h2>Welcome ${user.first_name} ${user.last_name}</h2>
+    <img src="../Imgs/avatars/profile_1.webp" class="profile_pic">
     <dl>
     <div>
         <dt>First name</dt>

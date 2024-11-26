@@ -1,64 +1,97 @@
 @import url("./varibles.css");
 
 main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  padding: var(--big-padding);
   background-color: var(--main-bg-color);
-}
+  max-width: var(--content-max-width);
+  margin: auto;
 
-.profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  padding: 20px;
-  border-radius: 5px;
-
-  background-color: var(--form-bg-color);
-  gap: 0.5rem;
-}
-
-.profile h1 {
-  margin-bottom: 20px;
-  text-align: center;
-  color: var(--main-text-color);
+  h1{
+    margin-bottom: var(--medium-padding);
+  }
 }
 
 .edit-btn {
   padding: 0.5rem;
   border: none;
-  border-radius: 5px;
-  background-color: var(--violet);
+  border-radius: var(--standard-padding);
+  background-color: var(--eminence);
   color: var(--almostWhite);
   cursor: pointer;
 }
 
-.profile-actions {
+.edit_buttons {
   display: flex;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: center;
+  gap: var(--medium-padding);
+
+  @media(min-width:800px){
+    justify-content: end;
+    margin: 0 var(--standard-padding) var(--standard-padding) 0;
+  }
 }
 
 .delete-btn {
   padding: 0.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: var(--standard-padding);
   background-color: var(--danger);
   color: var(--almostWhite);
   cursor: pointer;
+  font-size: var(--medium-padding);
 }
-@import url("./varibles.css");
+
+.profile_pic{
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 30%;
+  place-self: center;
+  display: block;
+
+  @media(min-width:800px){
+    width: 384px;
+    border-radius: var(--standard-padding);
+  }
+}
+
+.profile_container{
+  background-color: var(--cardGray);
+  padding: var(--standard-padding);
+  margin: var(--standard-padding);
+  border-radius: var(--standard-padding);
+}
+
+.profile_info{
+  display: grid;
+
+  @media(min-width: 800px) {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--medium-padding);
+  }
+}
 
 dl{
     display: grid;
+    margin: var(--standard-padding);
+
+    div:not(:last-child){
+      border-bottom: 2px var(--almostWhite) solid;
+      
+      
+    }
+
+    div{
+      padding: var(--standard-padding) 0;
+    }
     
     dt{
         font-weight: 800;
-        color: var(--violet);
+        color: var(--almostBlack);
     }
     dd{
-        padding-left: var(--standard-padding);
+        
+        color: var(--almostBlack);
+
+        
     }
 }

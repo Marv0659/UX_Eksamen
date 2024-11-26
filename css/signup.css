@@ -47,10 +47,11 @@ main{
 }
 
 .signup-form-wrapper{
+   
     background-color: var(--cardGray);
     padding: 2rem;
     border-radius: 0.5rem;
-    margin-block: 1rem;
+    margin-block: var(--big-padding);
     max-width: 30rem;  /* or any comfortable width for your form */
     margin-inline: auto;
     width: 100%;

@@ -87,7 +87,7 @@ async function fetchBookDetails() {
 // Function to display book details in the DOM
 function displayBookDetails(book) {
   const singleviewContainer = document.querySelector(".singleview");
-
+  const loanContainer = document.querySelector(".loans-container");
   // If there's no cover image, use a default image
   if (!book.cover || book.cover.trim() === "") {
     book.cover = "../Imgs/pexels-stasknop-1340588.webp";
@@ -105,21 +105,27 @@ singleviewContainer.innerHTML = `
         <p><strong>Author:</strong> ${book.author}</p>
         <p><strong>Publisher:</strong> ${book.publishing_company}</p>
         <p><strong>Year:</strong> ${book.publishing_year}</p>
-        <div class="book-loans">
-            <h2>Loan Details:</h2>
+    </div>
+`;
+
+loanContainer.innerHTML = `
+ <div class="book-loans">
+            <h2>Loan Details</h2>
             <ul>
-                    ${book.loans.map((loan, index) => `
+                    ${book.loans
+                      .map(
+                        (loan, index) => `
                             <li>
                                     <p><strong>Loan ${index + 1}:</strong></p>
                                     <p><strong>User ID:</strong> ${loan.user_id}</p>
                                     <p><strong>Loan Date:</strong> ${loan.loan_date}</p>
                             </li>
-                    `).join('')}
+                    `
+                      )
+                      .join("")}
             </ul>
         </div>
-    </div>
 `;
-
   // Add event listener to the "Loan" button if it exists
   const loanButton = document.querySelector(".loan-btn");
   if (loanButton && isLoggedIn()) {

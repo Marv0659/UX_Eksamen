@@ -1,7 +1,24 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToast } from "./common.js";
 import { getCookie, clearAllCookies } from "./cookieUtils.js";
 
 console.log(getCookie("user_id"));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (!role) {
+    // User is not authorized
+    showToast("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = role ? "index.html" : "login.html";
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "block";
+  }
+});
 
 // Function to fetch and display user details
 async function fetchUserDetails() {

@@ -78,3 +78,22 @@
   margin-block: var(--medium-padding);
   margin-left: var(--medium-padding);
 }
+
+.loans-container{
+  background-color: var(--cardGray);
+  margin-inline: var(--big-padding);
+  padding: var(--big-padding);
+  margin-block: var(--big-padding);
+  border-radius: var(--standard-padding);
+  h2{
+    text-align: center;
+    margin-bottom: var(--big-padding);
+  }
+  ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    gap: var(--big-padding);
+  
+  }
+  
+}

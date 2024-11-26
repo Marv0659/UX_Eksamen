@@ -45,7 +45,7 @@ h1{
 .randomBooksContainer {
   max-width: var(--content-max-width);
   text-align: center;
-  background-color: var(--cardGray);
+
   margin-block: var(--big-padding);
   padding: var(--big-padding);
 }

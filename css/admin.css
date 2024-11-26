@@ -22,9 +22,9 @@ main ul li a{
     background-color: var(--eminence);
     color: var(--almostWhite);
     padding: var(--standard-padding);
-    width: 10rem;
+    width: 15rem;
     border-radius: var(--tiny-padding);
-
+    
     
 }
 
@@ -45,4 +45,8 @@ main li{
     z-index: 1000;
     opacity: 0;
     transition: opacity 0.3s ease;
+}
+
+main ul{
+    margin-bottom: var(--big-padding);
 }

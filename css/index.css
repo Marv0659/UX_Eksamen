@@ -45,7 +45,7 @@ main {
 .randomBooksContainer {
   max-width: var(--content-max-width);
   text-align: center;
-  background-color: var(--cardGray);
+
   margin-block: var(--big-padding);
   padding: var(--big-padding);
 }
@@ -70,7 +70,7 @@ main {
   height: 30rem; /* Consistent height for all cards */
   padding: 1rem;
   color: var(--almostBlack);
-  background-color: white;
+  background-color: var(--cardGray);
   border-radius: 10px;
   border: 1px solid #e0e0e0;
 }

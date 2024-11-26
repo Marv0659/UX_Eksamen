@@ -9,9 +9,6 @@ document.querySelector(".signup-form").addEventListener("submit", (e) => {
   const address = e.target.address.value;
   const phone_number = e.target.phone_number.value;
   const birth_date = e.target.birth_date.value;
-
-  document.cookie = `email=${email}`;
-  document.cookie = `role=user`;
   
 
   // Prepare request body

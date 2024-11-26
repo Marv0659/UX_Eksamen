@@ -39,3 +39,38 @@ document.querySelector(".edit-profile").addEventListener("submit", async (e) => 
     alert(`An error occurred: ${error.message}`);
   }
 });
+
+// Fetch user details and populate the form
+async function fetchUserDetails() {
+  const userID = getCookie("user_id");
+
+  if (!userID) {
+    alert("User ID not found. Please log in.");
+    return;
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/users/${userID}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const user = await response.json();
+    console.log("User details:", user);
+
+    // Populate the form with user details
+    const form = document.querySelector(".edit-profile");
+    form.elements["first_name"].value = user.first_name;
+    form.elements["last_name"].value = user.last_name;
+    form.elements["email"].value = user.email;
+    form.elements["phone"].value = user.phone_number;
+    form.elements["address"].value = user.address;
+    form.elements["birth_date"].value = user.birth_date;
+  } catch (error) {
+    console.error("Error fetching user details:", error);
+    alert(`An error occurred: ${error.message}`);
+  }
+}
+
+fetchUserDetails();

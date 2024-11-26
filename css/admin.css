@@ -1,13 +1,13 @@
 @import url(./varibles.css);
-h1{
+main h1{
     text-align:center;
     margin-block: var(--big-padding);
 }
-p{
+main p{
     text-align: center;
     margin-block: var(--big-padding);
 }
-ul{
+main ul{
     display: grid;
     gap: var(--big-padding);
     padding: var(--big-padding);
@@ -16,7 +16,7 @@ ul{
     place-self: center;
     border-radius: var(--standard-padding);
 }
-a{
+main ul li a{
     display: block;
     text-decoration: none;
     background-color: var(--eminence);
@@ -28,7 +28,7 @@ a{
     
 }
 
-li{
+main li{
     display: grid;
     justify-content: center;
     text-align: center;

@@ -66,19 +66,19 @@ main {
   display: flex; /* Make the card a flex container */
   flex-direction: column; /* Stack children vertically */
   justify-content: space-between; /* Space out children evenly */
-  max-width: 17rem;
-  height: 22rem; /* Consistent height for all cards */
+  max-width: 21rem;
+  height: 30rem; /* Consistent height for all cards */
   padding: 1rem;
-  color: var(--almostWhite);
-  background-color: var(--almostBlack);
+  color: var(--almostBlack);
+  background-color: white;
   border-radius: 10px;
+  border: 1px solid #e0e0e0;
 }
 
 .book-cover img {
   width: 100%;
-  height: 5rem;
   border-radius: 10px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .detailsBtn {
@@ -89,7 +89,6 @@ main {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-  margin-top: auto; /* Push the button to the bottom of the card */
 }
 
 .book-content {

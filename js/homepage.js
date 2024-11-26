@@ -23,7 +23,7 @@ function displayBooks(books) {
       (book) => `
     <article class="book-article">
       <div class="book-cover">
-        <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+        <img src="./Imgs/pexels-stasknop-1340588.webp" alt="${book.title}" />
       </div>
       
       <div class="book-content">

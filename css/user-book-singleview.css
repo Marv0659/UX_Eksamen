@@ -6,6 +6,7 @@
   padding: var(--big-padding);
   background-color: var(--cardGray);
   border-radius: 10px;
+  margin-bottom: var(--big-padding);
 }
 
 .singleview {
@@ -21,7 +22,7 @@
   max-width: 50%;
   margin-bottom: var(--medium-padding);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .book-info {
@@ -64,7 +65,7 @@
 }
 
 .back-btn{
-  background-color: var(--violet);
+  background-color: var(--eminence);
   color: var(--almostWhite);
   padding: var(--standard-padding) var(--medium-padding);
   font-size: 1rem;

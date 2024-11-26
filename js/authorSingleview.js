@@ -52,16 +52,23 @@ function showauthor(){
 
     document.querySelector("#author_container").innerHTML += herosection
 
-    const authorBooks = data.map(book => `
+    const authorBooks = data
+      .map(
+        (book) => `
         
         <article>
-            <h3>${book.title}</h3>
-            <p>Written by: ${book.author}</p>
-            <p>Published: ${book.publishing_year}</p>
-            <p>Publishing company: ${book.publishing_company}</p>
+            <img src="../Imgs/pexels-stasknop-1340588.webp">
+            <div>
+                <h3>${book.title}</h3>
+                <p>Written by: ${book.author}</p>
+                <p>Published: ${book.publishing_year}</p>
+                <p>Publishing company: ${book.publishing_company}</p>
+            </div>
         </article>
         
-        `).join("")
+        `
+      )
+      .join("");
 
         document.querySelector(".authors_books").innerHTML += authorBooks
 

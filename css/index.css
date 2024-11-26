@@ -59,7 +59,7 @@ main {
   flex-wrap: wrap;
   gap: 3rem;
   justify-content: center;
-  align-items: stretch; /* Ensures all cards stretch to the same height */
+  align-items: stretch; 
 }
 
 .book-article {

@@ -9,17 +9,15 @@ main {
 
 .search {
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
 }
 
 .searchContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   gap: 1rem;
   padding: 2rem;
 }
@@ -38,9 +36,6 @@ main {
   cursor: pointer;
 }
 
-.searchContainer label {
-  font-size: 1.5rem;
-}
 .randomBooksContainer {
   max-width: var(--content-max-width);
   text-align: center;

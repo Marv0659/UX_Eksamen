@@ -5,6 +5,10 @@ body{
     background-color: var(--almostWhite);
 }
 
+h1{
+    text-align: center;
+    margin-block: var(--big-padding);
+}
 
 .authors_container{
     display: grid;

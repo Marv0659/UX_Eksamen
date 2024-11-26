@@ -93,13 +93,14 @@ ul {
   }
 }
 
-.burgernav {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: var(--violet);
-  transition: 0.3s ease;
-  left: 300%;
+.burgernav{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: var(--violet);
+    transition: 0.3s ease;
+    left: 300%;
+    z-index: 10;
 
   @media (min-width: 900px) {
     display: none;

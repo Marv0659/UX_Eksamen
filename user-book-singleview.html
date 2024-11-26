@@ -6,17 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/user-book-singleview.css">
     <script type="module" src="./js/userBookSingleview.js"></script>
+    <script type="module" src="./js/common.js"></script>
+
     <title>Id</title>
 </head>
 
 <body>
+    <header>
+        <div class="top_elements">
+            <div>
+                <a href="index.html">PAGEFLOW</a>
+            </div>
 
-    <section class="singleviewContainer">
-        <div class="singleview">
-
+            <nav class="headernav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="booklist.html">Books</a></li>
+                    <li><a href="authorlist.html">Authors</a></li>
+                    <li><a class="login" href="login.html">Login</a></li>
+                    <li><a class="signup" href="signup.html">Signup</a></li>
+                </ul>
+            </nav>
+            <button class="burgertoggle">
+                <img class="burger" src="Imgs/menu.svg" alt="open burger menu">
+                <img class="cross hidden" src="Imgs/cross.svg" alt="close burger menu">
+            </button>
         </div>
-    </section>
+        <nav class="burgernav closed">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="booklist.html">Books</a></li>
+                <li><a href="authorlist.html">Authors</a></li>
+                <li><a class="burger_login" href="login.html">Login</a></li>
+                <li><a class="burger_signup" href="signup.html">Signup</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="singleviewContainer">
+            <div class="singleview">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="max_w_footer">
+            <h4>PAGEFLOW</h4>
+            <div class="socials">
+                <a href="#"><img src="Imgs/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="Imgs/instagram.svg" alt="Instagram"></a>
+                <a href="#"><img src="Imgs/linkedin.svg" alt="Linkedin"></a>
+            </div>
+            <div class="info">
+                <div>
+                    <h5>Contact</h5>
+                    <address>
+                        <a href="mailto:contact@pageflow.com">Contact@pageflow.com</a></li>
+                        <p>Guldbergsgade 29N</p>
+                        <p>2200 København</p>
+                        <p>Danmark</p>
+                    </address>
+                </div>
+                <div>
+                    <h5>Navigate</h5>
+                    <nav class="footernav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="booklist.html">Books</a></li>
+                            <li><a href="authorlist.html">Authors</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

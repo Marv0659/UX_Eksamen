@@ -28,15 +28,12 @@ function displayBooks(books) {
     return;
   }
 
-
   if (getCookie("role") === "admin") {
-  bookCards.innerHTML = books
-    .map(
-      (book) => `
+    bookCards.innerHTML = books
+      .map(
+        (book) => `
       <article class="book-article">
-        <div class="book-cover">
           <img src="./Imgs/HeroTest.png" alt="${book.title}" />
-        </div>
         <div class="book-content">
           <h3>${book.title}</h3>
           <p><strong>Author:</strong> ${book.author}</p>
@@ -46,16 +43,15 @@ function displayBooks(books) {
         </div>
       </article>
     `
-    )
-    .join("");
-  }
-  else{
+      )
+      .join("");
+  } else {
     bookCards.innerHTML = books
       .map(
         (book) => `
       <article class="book-article">
         <div class="book-cover">
-          <img src="./Imgs/HeroTest.png" alt="${book.title}" />
+          <img src="./Imgs/pexels-stasknop-1340588.webp" alt="${book.title}" />
         </div>
         <div class="book-content">
           <h3>${book.title}</h3>

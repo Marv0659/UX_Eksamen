@@ -62,3 +62,18 @@
   color: var(--almostBlack);
   margin-top: var(--medium-padding);
 }
+
+.back-btn{
+  background-color: var(--violet);
+  color: var(--almostWhite);
+  padding: var(--standard-padding) var(--medium-padding);
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.back-btn-wrapper{
+  margin-block: var(--medium-padding);
+  margin-left: var(--medium-padding);
+}

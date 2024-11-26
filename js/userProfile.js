@@ -14,7 +14,6 @@ async function fetchUserDetails() {
     const response = await fetch(`${BASE_URL}/users/${userId}`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     const user = await response.json();
-    displayUserDetails(user);
   } catch (error) {
     console.error("Error fetching user details:", error);
   }
@@ -87,9 +86,10 @@ async function getProfile() {
 async function drawProfile() {
   const user = await getProfile();
 
-  console.log(user);
+  document.querySelector("h1").textContent = `Hi ${user.first_name} ${user.last_name}`
+
   const profile = `
-    <h2>Welcome ${user.first_name} ${user.last_name}</h2>
+    
     <img src="../Imgs/avatars/profile_1.webp" class="profile_pic">
     <dl>
     <div>
@@ -121,9 +121,11 @@ async function drawProfile() {
         <dd>${user.membership_date}</dd>
     </div>
     </dl>
+
+    
     `;
 
-  const deleteButton = document.querySelector(".delete-btn");
+const deleteButton = document.querySelector(".delete-btn");
   deleteButton.addEventListener("click", async () => {
     const userId = getCookie("user_id");
     if (!userId) {
@@ -151,7 +153,7 @@ async function drawProfile() {
     }
   });
 
-  document.querySelector(".profile_container").innerHTML += profile;
+  document.querySelector(".profile_info").innerHTML += profile;
 }
 
 drawProfile();

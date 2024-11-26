@@ -1,13 +1,20 @@
 @import url(./varibles.css);
 h1{
     text-align:center;
-
     margin-block: var(--big-padding);
-
+}
+p{
+    text-align: center;
+    margin-block: var(--big-padding);
 }
 ul{
     display: grid;
     gap: var(--big-padding);
+    padding: var(--big-padding);
+    background-color: var(--cardGray);
+    width: fit-content;
+    place-self: center;
+    border-radius: var(--standard-padding);
 }
 a{
     display: block;
@@ -16,7 +23,9 @@ a{
     color: var(--almostWhite);
     padding: var(--standard-padding);
     width: 10rem;
+    border-radius: var(--tiny-padding);
 
+    
 }
 
 li{

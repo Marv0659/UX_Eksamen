@@ -1,4 +1,18 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, getCookie } from "../js/common.js";
+
+if (getCookie("role")) {
+  if (getCookie("role") !== "admin") {
+    alert("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 0);
+  }
+} else {
+  alert("You are not authorized to view this page.");
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 0);
+}
 
 document.querySelector(".create-publisher-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -23,12 +37,6 @@ document.querySelector(".create-publisher-form").addEventListener("submit", (e) 
       } else {
         alert("Publisher created successfully");
       }
-
-      //   if (Object.keys(data).includes("book_id")) {
-      //     alert("Book created successfully");
-      //   } else if (Object.keys(data).includes("error")) {
-      //     alert(data.error);
-      //   }
     })
     .catch((error) => {
       alert("Error:", error);

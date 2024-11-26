@@ -24,11 +24,13 @@
 @font-face {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
   src: url();
+  font-display:swap;
 }
 
 @font-face {
   font-family: "EB Garamond";
   src: url();
+  font-display:swap;
 }
 
 a {
@@ -44,6 +46,7 @@ h4,
 h5,
 h6 {
   font-family: "EB Garamond";
+  font-display:swap;
 }
 
 p,
@@ -51,6 +54,7 @@ a,
 label,
 input {
   font-family: Avenir, Montserrat, Corbel, "URW Gothic", source-sans-pro, sans-serif;
+  font-display:swap;
 }
 h6,
 li {

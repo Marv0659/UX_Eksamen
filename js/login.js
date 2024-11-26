@@ -1,6 +1,11 @@
 import { BASE_URL, getCookie } from "../js/common.js";
 
-
+if (getCookie("role")){
+    alert("You are already logged in.");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 0); 
+}
 
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();

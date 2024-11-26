@@ -5,6 +5,20 @@ import { getCookie } from "./cookieUtils.js";
 const urlParams = new URLSearchParams(window.location.search);
 const bookId = urlParams.get("id");
 
+if (getCookie("role")) {
+  if (getCookie("role") !== "admin") {
+    alert("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = "index.html";
+    }, 0);
+  }
+} else {
+  alert("You are not authorized to view this page.");
+  setTimeout(() => {
+    window.location.href = "login.html";
+  }, 0);
+}
+
 // Function to check if the user is logged in
 function isLoggedIn() {
   return !!getCookie("email"); // Returns true if the email cookie exists

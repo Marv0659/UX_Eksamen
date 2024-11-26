@@ -24,6 +24,7 @@ try {
         document.querySelector(".burger_login").href = "user-profile.html"
 
         document.querySelector(".signup").textContent = "Logout"
+        document.querySelector(".signup").href = "index.html"
         document.querySelector(".signup").addEventListener("click", () =>{
           clearAllCookies()
         })
@@ -38,10 +39,12 @@ try {
         document.querySelector(".burger_login").href = "admin.html"
 
         document.querySelector(".signup").textContent = "Logout"
+        document.querySelector(".signup").href = "index.html"
         document.querySelector(".signup").addEventListener("click", () =>{
           clearAllCookies()
         })
         document.querySelector(".burger_signup").textContent = "Logout"
+        document.querySelector(".burger_signup").href = "index.html"
         document.querySelector(".burger_signup").addEventListener("click", () =>{
           clearAllCookies()
         })
@@ -65,8 +68,6 @@ try {
 
     } catch (error) {
       console.error("Error toggling navigation:", error.message)
-      // You could add user feedback here, like:
-      // alert("Sorry, there was a problem with the navigation menu")
     }
   })
 } catch (error) {

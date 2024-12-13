@@ -45,7 +45,6 @@ h1{
 .randomBooksContainer {
   max-width: var(--content-max-width);
   text-align: center;
-
   margin-block: var(--big-padding);
   padding: var(--big-padding);
 }

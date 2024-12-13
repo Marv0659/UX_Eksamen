@@ -5,6 +5,7 @@ body{
     background-color: var(--almostWhite);
 }
 
+
 h1{
     text-align: center;
     margin-block: var(--big-padding);
@@ -16,13 +17,15 @@ h1{
     gap: 20px;
     max-width: 1200px;
     margin-inline: auto;
+   
 }
 
 .author_card{
     display: flex;
     flex-direction: column;
-    border-radius: 0.5rem;
+    border-radius: var(--standard-padding);
     background-color: var(--cardGray);
+    margin-inline: var(--big-padding);
     
 
 
@@ -30,7 +33,7 @@ h1{
   transition: transform 0.2s ease;
 
     img{
-        border-radius: 0.5rem;
+        border-radius: var(--standard-padding) var(--standard-padding) 0 0;
     }
 
     a{

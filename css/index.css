@@ -20,7 +20,7 @@ main {
 }
 
 .text-overlay {
-  color: white;
+  color: var(--almostWhite);
   font-size: 4rem; /* Adjust size for better visibility */
   font-weight: bold;
 }

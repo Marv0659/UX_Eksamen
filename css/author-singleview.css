@@ -90,3 +90,7 @@
     margin-inline: var(--medium-padding);
    }
 }
+
+main{
+  padding-top: 4rem;
+}

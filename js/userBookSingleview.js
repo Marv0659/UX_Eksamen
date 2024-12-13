@@ -42,6 +42,14 @@ function userLoanBook() {
 
 // Function to fetch and display book details
 async function fetchBookDetails() {
+  const fallbackBook = {
+    title: "Unknown Title",
+    author: "Unknown Author",
+    publishing_company: "Unknown Publisher",
+    publishing_year: "N/A",
+    cover: "../Imgs/pexels-stasknop-1340588.webp", // Default image
+  };
+
   try {
     const response = await fetch(`${BASE_URL}/books/${bookId}`);
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -49,6 +57,7 @@ async function fetchBookDetails() {
     displayBookDetails(book);
   } catch (error) {
     console.error("Error fetching book details:", error);
+    displayBookDetails(fallbackBook); // Use placeholder data
   }
 }
 

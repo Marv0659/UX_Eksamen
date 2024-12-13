@@ -1,12 +1,22 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, showToast } from "../js/common.js";
 import { getCookie } from "../js/cookieUtils.js";
 
-if (getCookie("role")){
-    alert("You are already logged in.");
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (role) {
+    // User is not authorized
+    showToast("You are not alredy logged in. Logout to go to this page.");
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 0); 
-}
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "grid";
+  }
+});
 
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -40,10 +50,10 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
           window.location.href = "index.html";
         }
       } else {
-        alert(data.error);
+        showToast(data.error);
       }
     })
     .catch((error) => {
-      alert("Error:", error);
+      showToast("Error:", error);
     });
 });

@@ -33,7 +33,7 @@ function displayBooks(books) {
       <p><strong>Author:</strong> ${book.author}</p>
       <p><strong>Publisher:</strong> ${book.publishing_company}</p>
       <p><strong>Year:</strong> ${book.publishing_year}</p>
-      <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}" aria-label="${book.title}>Details</a>
+      <a class="detailsBtn" href="user-book-singleview.html?id=${book.book_id}" aria-label="${book.title}">Details</a>
       </div>
       </article>
   `

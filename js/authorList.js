@@ -27,7 +27,7 @@ function renderAuthors(authors) {
             <img src="Imgs/avatars/profile_${author.imageNumber}.webp" alt="${author.author_name}" />
            <div>
                 <h2>${author.author_name}</h2>
-                <a href="author-Singleview.html?id=${author.author_id}&img=${author.imageNumber}" aria-label="${author.author_name}>Read more</a>
+                <a href="author-Singleview.html?id=${author.author_id}&img=${author.imageNumber}" aria-label="${author.author_name}">Read more</a>
             </div>
         </article>
         `;

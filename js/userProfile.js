@@ -107,7 +107,7 @@ async function drawProfile() {
 
   const profile = `
     
-    <img src="../Imgs/avatars/profile_1.webp" class="profile_pic">
+    <img src="Imgs/avatars/profile_1.webp" class="profile_pic">
     <dl>
     <div>
         <dt>First name</dt>

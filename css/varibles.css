@@ -6,7 +6,8 @@
   --almostWhite: #f2f2f2;
   --eminence: #763497;
   --cardGray: #f9f9f9;
-  --danger: #ff0000;
+  --success: #5cb85c;
+  --danger: #ed4337;
   /* sizes */
   --content-max-width: 1200px;
   --standard-padding: 0.5rem;
@@ -274,14 +275,28 @@ footer {
 
 #page-content{
   display: none;
+
 }
-.toast{
+.toast-error{
     position: absolute;
-    bottom: 50%;
-    left: 40%;
-    background-color: var(--almostBlack);
+    bottom: 10%;
+    right: 2%;
+    background-color: var(--danger);
     color: var(--almostWhite);
-    padding: 10px 20px;
+    padding: var(--big-padding);
+    border-radius: var(--tiny-padding);
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.toast-success{
+    position: absolute;
+    bottom: 10%;
+    right: 2%;
+    background-color: var(--success);
+    color: var(--almostWhite);
+    padding: var(--big-padding);
     border-radius: var(--tiny-padding);
     z-index: 1000;
     opacity: 0;

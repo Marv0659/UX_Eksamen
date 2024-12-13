@@ -1,4 +1,4 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, showToastError } from "../js/common.js";
 
 document.querySelector(".signup-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -32,10 +32,10 @@ document.querySelector(".signup-form").addEventListener("submit", (e) => {
         if (Object.keys(data).includes("user_id")) {
           window.location.href = "login.html";
         } else {
-          alert(data.error);
+          showToastError(data.error);
         }
       })
       .catch((error) => {
-        alert("Error:", error);
+        showToastError("Please fill out all fields", error);
       });
 });

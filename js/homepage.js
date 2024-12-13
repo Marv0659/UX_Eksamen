@@ -1,6 +1,7 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToastError } from "./common.js";
 
 const NUM_BOOKS = 8;
+
 
 // index
 const randomBooks = document.querySelector(".random-books"); // Use querySelector for class
@@ -14,6 +15,7 @@ async function fetchRandomBooks(numberOfBooks) {
     displayBooks(books); // Call the display function with fetched books
   } catch (error) {
     console.error("Error fetching books:", error);
+    displayFetchError(); // Display error message in the UI
   }
 }
 
@@ -37,6 +39,15 @@ function displayBooks(books) {
   `
     )
     .join("");
+}
+
+function displayFetchError() {
+  randomBooks.innerHTML = `
+    <div class="error-message">
+      <h2>Unable to fetch books</h2>
+      <p>There was an error fetching the book data. Please try again later.</p>
+    </div>
+  `;
 }
 
 fetchRandomBooks(NUM_BOOKS);

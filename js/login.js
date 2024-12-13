@@ -1,23 +1,28 @@
-import { BASE_URL } from "../js/common.js";
+import { BASE_URL, showToastError } from "../js/common.js";
 import { getCookie } from "../js/cookieUtils.js";
 
-if (getCookie("role")){
-    alert("You are already logged in.");
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (role) {
+    // User is not authorized
+    showToastError("You are already logged in. Logout to go to this page.");
     setTimeout(() => {
       window.location.href = "index.html";
-    }, 0); 
-}
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "grid";
+  }
+});
 
 document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  document.cookie = `email=${email}`;
-  if (email === "admin.library@mail.com") {
-    document.cookie = `role=admin`;
-  } else {
-    document.cookie = `role=user`;
-  }
+  
 
   // Prepare request body
   const formData = new FormData();
@@ -31,8 +36,15 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      
       console.log(data);
       if (Object.keys(data).includes("user_id")) {
+        document.cookie = `email=${email}`;
+        if (email === "admin.library@mail.com") {
+          document.cookie = `role=admin`;
+        } else {
+          document.cookie = `role=user`;
+        }
         if (getCookie("role") === "admin") {
           window.location.href = "admin.html";
         } else {
@@ -40,10 +52,10 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
           window.location.href = "index.html";
         }
       } else {
-        alert(data.error);
+        showToastError(data.error);
       }
     })
     .catch((error) => {
-      alert("Error:", error);
+      showToastError("Something went wrong. Please try again later.");
     });
 });

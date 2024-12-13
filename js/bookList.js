@@ -18,6 +18,7 @@ async function fetchRandomBooks(numberOfBooks) {
     setupSearch(books);
   } catch (error) {
     console.error("Error fetching books:", error);
+    displayFetchError(); // Display error message in the UI
   }
 }
 
@@ -64,6 +65,15 @@ function displayBooks(books) {
       )
       .join("");
   }
+}
+
+function displayFetchError() {
+  bookCards.innerHTML = `
+    <div class="error-message">
+      <h2>Unable to fetch books</h2>
+      <p>There was an error fetching the book data. Please try again later.</p>
+    </div>
+  `;
 }
 
 // Function to set up search functionality

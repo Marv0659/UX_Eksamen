@@ -27,6 +27,7 @@ main ul li a{
     
     
 }
+
 main #page-content{
     justify-content: center;
 }
@@ -37,18 +38,7 @@ main li{
     text-align: center;
 }
 
-.toast{
-    position: absolute;
-    bottom: 50%;
-    left: 40%;
-    background-color: var(--almostBlack);
-    color: var(--almostWhite);
-    padding: 10px 20px;
-    border-radius: var(--tiny-padding);
-    z-index: 1000;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
+
 
 main ul{
     margin-bottom: var(--big-padding);

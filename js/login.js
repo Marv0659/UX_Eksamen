@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (role) {
     // User is not authorized
-    showToast("You are not alredy logged in. Logout to go to this page.");
+    showToast("You are already logged in. Logout to go to this page.");
     setTimeout(() => {
       window.location.href = "index.html";
     }, 3000);
@@ -22,12 +22,7 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const email = document.querySelector("#email").value;
   const password = document.querySelector("#password").value;
-  document.cookie = `email=${email}`;
-  if (email === "admin.library@mail.com") {
-    document.cookie = `role=admin`;
-  } else {
-    document.cookie = `role=user`;
-  }
+  
 
   // Prepare request body
   const formData = new FormData();
@@ -41,8 +36,15 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
   })
     .then((response) => response.json())
     .then((data) => {
+      
       console.log(data);
       if (Object.keys(data).includes("user_id")) {
+        document.cookie = `email=${email}`;
+        if (email === "admin.library@mail.com") {
+          document.cookie = `role=admin`;
+        } else {
+          document.cookie = `role=user`;
+        }
         if (getCookie("role") === "admin") {
           window.location.href = "admin.html";
         } else {
@@ -54,6 +56,6 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
       }
     })
     .catch((error) => {
-      showToast("Error:", error);
+      showToast("Something went wrong. Please try again later.");
     });
 });

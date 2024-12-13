@@ -40,12 +40,12 @@ document.querySelector(".create-author-form").addEventListener("submit", (e) => 
     .then((data) => {
       console.log(data);
       if (data.error) {
-        alert(data.error);
+        showToast(data.error);
       } else {
-        alert("Author created successfully");
+        showToast("Author created successfully");
       }
     })
     .catch((error) => {
-      alert("Error:", error);
+      showToast("Error:", error);
     });
 });

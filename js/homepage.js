@@ -1,6 +1,7 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToast } from "./common.js";
 
 const NUM_BOOKS = 8;
+
 
 // index
 const randomBooks = document.querySelector(".random-books"); // Use querySelector for class

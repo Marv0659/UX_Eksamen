@@ -39,12 +39,12 @@ document.querySelector(".create-publisher-form").addEventListener("submit", (e) 
     .then((data) => {
       console.log(data);
       if (data.error) {
-        alert(data.error);
+        showToast(data.error);
       } else {
-        alert("Publisher created successfully");
+        showToast("Publisher created successfully");
       }
     })
     .catch((error) => {
-      alert("Error:", error);
+      showToast("Error:", error);
     });
 });

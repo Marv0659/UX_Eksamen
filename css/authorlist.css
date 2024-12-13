@@ -54,9 +54,11 @@ h1{
 form{
     display: grid;
     place-self: center;
+    justify-content: center;
     margin-bottom: 2rem;
 
     input{
+        width: 10rem;
         padding: 0.5rem 1rem;
         background-color: var(--almostWhite);
         border-radius: 0.5rem;

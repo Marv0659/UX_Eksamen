@@ -110,27 +110,27 @@ async function drawProfile() {
     <img src="Imgs/avatars/profile_1.webp" class="profile_pic">
     <dl>
     <div>
-        <dt>First name</dt>
+        <dt >First name</dt>
         <dd>${user.first_name}</dd>
     </div>
     <div>
-        <dt>Last name</dt>
+        <dt >Last name</dt>
         <dd>${user.last_name}</dd>
     </div>
     <div>
-        <dt>E-mail</dt>
+        <dt >E-mail</dt>
         <dd>${user.email}</dd>
     </div>
     <div>
-        <dt>Phone number</dt>
+        <dt >Phone number</dt>
         <dd>${user.phone_number}</dd>
     </div>
     <div>
-        <dt>Address</dt>
+        <dt >Address</dt>
         <dd>${user.address}</dd>
     </div>
     <div>
-        <dt>Birth date</dt>
+        <dt >Birth date</dt>
         <dd>${user.birth_date}</dd>
     </div>
     <div>

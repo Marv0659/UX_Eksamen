@@ -71,7 +71,7 @@ function displayBookDetails(book) {
   }
 
   // Loan button: Show "Loan" for logged-in users, "Login" for others
-  const loanBtn = isLoggedIn() ? `<button type="button" class="loan-btn">Loan</button>` : `<a href="login.html" class="loan-btn">Login to loan</a>`;
+  const loanBtn = isLoggedIn() ? `<button type="button" class="loan-btn">Loan</button aria-label="loan button">` : `<a href="login.html" class="loan-btn" aria-label="login to loan">Login to loan</a>`;
 
   // Populate the singleview container with book details and the button
   singleviewContainer.innerHTML = `

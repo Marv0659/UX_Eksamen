@@ -8,7 +8,7 @@ main {
 }
 
 .hero-container {
-  background: url(../Imgs/pexels-stasknop-1340588.webp) no-repeat center center;
+  background: url(../Imgs/HeroNew.png) no-repeat center center;
   background-size: cover; /* Makes the background image scale responsively */
   height: 70vh;
   width: 100%;
@@ -23,6 +23,7 @@ main {
   color: var(--almostWhite);
   font-size: 4rem; /* Adjust size for better visibility */
   font-weight: bold;
+  z-index: 1; /* Ensures text is above the background image */
 }
 
 .cta-hero {
@@ -32,6 +33,7 @@ main {
   align-items: center;
   gap: 1rem;
   margin-right: 9rem;
+  z-index: 1;
 }
 .cta {
   background-color: var(--eminence);

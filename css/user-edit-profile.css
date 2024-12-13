@@ -18,6 +18,21 @@ form {
   background-color: var(--form-bg-color);
 }
 
+.back-btn{
+  background-color: var(--eminence);
+  color: var(--almostWhite);
+  padding: var(--standard-padding) var(--medium-padding);
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  
+}
+
+.back-btn-wrapper{
+  margin-block: var(--medium-padding);
+  margin-left: var(--medium-padding);
+}
+
 form h1 {
   margin-bottom: 20px;
   text-align: center;

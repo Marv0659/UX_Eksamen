@@ -1,4 +1,4 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToastError } from "./common.js";
 import { getCookie } from "./cookieUtils.js";
 
 // Get the book ID from the URL parameters
@@ -15,7 +15,7 @@ function userLoanBook() {
   const userId = getCookie("user_id"); // Get the user ID from cookies
 
   if (!userId || !bookId) {
-    alert("Invalid user or book ID. " + "userId: " + userId + "bookId: " + bookId);
+    showToastError("Invalid user or book ID. " + "userId: " + userId + "bookId: " + bookId);
     return;
   }
 
@@ -31,12 +31,12 @@ function userLoanBook() {
       if (data.status === "ok") {
         ShowLoanSuccessMessage();
       } else {
-        alert(data.error || "Unable to loan the book.");
+        showToastError(data.error || "Unable to loan the book.");
       }
     })
     .catch((error) => {
       console.error("Error:", error);
-      alert("An error occurred while processing your loan request.");
+      showToastError("An error occurred while processing your loan request.");
     });
 }
 

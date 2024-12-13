@@ -1,4 +1,4 @@
-import { BASE_URL, showToast } from "../js/common.js";
+import { BASE_URL, showToastError, showToastSuccess } from "../js/common.js";
 import { getCookie } from "../js/cookieUtils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!role || role !== "admin") {
     // User is not authorized
-    showToast("You are not authorized to view this page.");
+    showToastError("You are not authorized to view this page.");
     setTimeout(() => {
       window.location.href = role ? "index.html" : "login.html";
     }, 3000);
@@ -21,13 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (getCookie("role")) {
   if (getCookie("role") !== "admin") {
-    showToast("You are not authorized to view this page.");
+    showToastError("You are not authorized to view this page.");
     setTimeout(() => {
       window.location.href = "index.html";
     }, 0);
   }
 } else {
-  showToast("You are not authorized to view this page.");
+  showToastError("You are not authorized to view this page.");
   setTimeout(() => {
     window.location.href = "login.html";
   }, 0);
@@ -57,14 +57,14 @@ document.querySelector(".create-book-form").addEventListener("submit", (e) => {
     .then((data) => {
       console.log(data);
 if(data.error){
-    showToast(data.error);
+    showToastError(data.error);
 }
 else{
-    showToast("Book created successfully");
+    showToastSuccess("Book created successfully");
 }
 
     })
     .catch((error) => {
-      showToast("Error:", error);
+      showToastError("Please fill out all fields");
     });
 });

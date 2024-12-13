@@ -77,9 +77,25 @@ try {
 
 }
 
-export function showToast(message, duration = 3000) {
+export function showToastError(message, duration = 3000) {
   const toast = document.createElement("div");
-  toast.setAttribute("class", "toast");
+  toast.setAttribute("class", "toast-error");
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = "1";
+  }, 100);
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    setTimeout(() => {
+      toast.remove();
+    }, 300);
+  }, duration);
+}
+
+export function showToastSuccess(message, duration = 3000) {
+  const toast = document.createElement("div");
+  toast.setAttribute("class", "toast-success");
   toast.textContent = message;
   document.body.appendChild(toast);
   setTimeout(() => {

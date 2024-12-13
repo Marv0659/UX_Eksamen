@@ -1,4 +1,4 @@
-import { BASE_URL, showToast } from "../js/common.js";
+import { BASE_URL, showToastError } from "../js/common.js";
 import { getCookie } from "../js/cookieUtils.js";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (role) {
     // User is not authorized
-    showToast("You are already logged in. Logout to go to this page.");
+    showToastError("You are already logged in. Logout to go to this page.");
     setTimeout(() => {
       window.location.href = "index.html";
     }, 3000);
@@ -52,10 +52,10 @@ document.querySelector(".login-form").addEventListener("submit", (e) => {
           window.location.href = "index.html";
         }
       } else {
-        showToast(data.error);
+        showToastError(data.error);
       }
     })
     .catch((error) => {
-      showToast("Something went wrong. Please try again later.");
+      showToastError("Something went wrong. Please try again later.");
     });
 });

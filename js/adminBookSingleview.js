@@ -1,4 +1,4 @@
-import { BASE_URL, showToast } from "./common.js";
+import { BASE_URL, showToastError } from "./common.js";
 import { getCookie } from "./cookieUtils.js";
 
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!role || role !== "admin") {
     // User is not authorized
-    showToast("You are not authorized to view this page.");
+    showToastError("You are not authorized to view this page.");
     setTimeout(() => {
       window.location.href = role ? "index.html" : "login.html";
     }, 3000);
@@ -33,7 +33,7 @@ async function fetchBookDetails() {
     const book = await response.json();
     displayBookDetails(book);
   } catch (error) {
-    showToast("Error fetching book details:", error);
+    showToastError("Error fetching book details:", error);
   }
 }
 

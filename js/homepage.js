@@ -1,4 +1,4 @@
-import { BASE_URL, showToast } from "./common.js";
+import { BASE_URL, showToastError } from "./common.js";
 
 const NUM_BOOKS = 8;
 

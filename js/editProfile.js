@@ -1,5 +1,22 @@
-import { BASE_URL } from "./common.js";
+import { BASE_URL, showToastError, showToastSuccess } from "./common.js";
 import { getCookie } from "./cookieUtils.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  const pageContent = document.getElementById("page-content");
+
+  const role = getCookie("role");
+
+  if (!role) {
+    // User is not authorized
+    showToastError("You are not authorized to view this page.");
+    setTimeout(() => {
+      window.location.href = role ? "index.html" : "login.html";
+    }, 3000);
+  } else {
+    // User is authorized, show the page content
+    pageContent.style.display = "grid";
+  }
+});
 
 document.querySelector(".edit-profile").addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -9,7 +26,7 @@ document.querySelector(".edit-profile").addEventListener("submit", async (e) => 
   const userID = getCookie("user_id");
 
   if (!userID) {
-    alert("User ID not found. Please log in.");
+    showToastError("User ID not found. Please log in.");
     return;
   }
 
@@ -30,14 +47,14 @@ document.querySelector(".edit-profile").addEventListener("submit", async (e) => 
 
     // Check for status in the response
     if (data.status === "ok") {
-      alert("User updated successfully");
+      showToastSuccess("User updated successfully");
       window.location.href = "user-profile.html"; // Redirect to profile page
     } else {
-      alert(data.error || "Unexpected response format");
+      showToastError(data.error || "Unexpected response format");
     }
   } catch (error) {
     console.error("Error updating profile:", error);
-    alert(`An error occurred: ${error.message}`);
+    showToastError(`An error occurred: ${error.message}`);
   }
 });
 
@@ -46,7 +63,7 @@ async function fetchUserDetails() {
   const userID = getCookie("user_id");
 
   if (!userID) {
-    alert("User ID not found. Please log in.");
+    showToastError("User ID not found. Please log in.");
     return;
   }
 
@@ -70,7 +87,7 @@ async function fetchUserDetails() {
     form.elements["birth_date"].value = user.birth_date;
   } catch (error) {
     console.error("Error fetching user details:", error);
-    alert(`An error occurred: ${error.message}`);
+    showToastError(`An error occurred: ${error.message}`);
   }
 }
 

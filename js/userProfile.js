@@ -1,4 +1,4 @@
-import { BASE_URL, showToast } from "./common.js";
+import { BASE_URL, showToastError, showToastSuccess } from "./common.js";
 import { getCookie, clearAllCookies } from "./cookieUtils.js";
 
 console.log(getCookie("user_id"));
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!role) {
     // User is not authorized
-    showToast("You are not authorized to view this page.");
+    showToastError("You are not authorized to view this page.");
     setTimeout(() => {
       window.location.href = role ? "index.html" : "login.html";
     }, 3000);
@@ -159,14 +159,14 @@ const deleteButton = document.querySelector(".delete-btn");
       if (data.status === "ok") {
         // delete cookie
         clearAllCookies();
-        alert("User deleted successfully");
+        showToastSuccess("User deleted successfully");
         window.location.href = "login.html";
       } else {
-        alert(data.error || "Unexpected response format");
+        showToastError(data.error || "Unexpected response format");
       }
     } catch (error) {
       console.error("Error deleting user:", error);
-      alert(`An error occurred: ${error.message}`);
+      showToastError(`An error occurred: ${error.message}`);
     }
   });
 

@@ -1,4 +1,4 @@
-import { showToast } from "./common.js";
+import { showToastError } from "./common.js";
 import { getCookie } from "./cookieUtils.js";
 
 
@@ -12,7 +12,7 @@ import { getCookie } from "./cookieUtils.js";
 
 //   if (!role || role !== "admin") {
 //     // User is not authorized
-//     showToast("You are not authorized to view this page.");
+//     showToastError("You are not authorized to view this page.");
 //     setTimeout(() => {
 //       window.location.href = role ? "index.html" : "login.html";
 //     }, 3000);
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!role || role !== "admin") {
     // User is not authorized
-    showToast("You are not authorized to view this page.");
+    showToastError("You are not authorized to view this page.");
     setTimeout(() => {
        window.location.href = role ? "index.html" : "login.html";
     }, 3000);

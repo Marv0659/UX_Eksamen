@@ -78,12 +78,23 @@ img {
 ul {
   list-style: none;
 }
+
+header{
+  margin-bottom: 5rem;
+}
+
 .top_elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--violet);
   padding: 2rem;
+  
 
   a {
     font-size: 1.2rem;
@@ -114,6 +125,9 @@ ul {
     transition: 0.3s ease;
     left: 300%;
     z-index: 10;
+    top: 0;
+    display: grid;
+    place-content: center;
 
   @media (min-width: 900px) {
     display: none;
@@ -123,12 +137,13 @@ ul {
     place-self: center;
     list-style-type: none;
     display: grid;
-    gap: var(--standard-padding);
+    gap: var(--big-padding);
     text-align: center;
   }
 
   a {
     color: var(--almostWhite);
+    font-size: var(--big-padding);
   }
   a:hover {
     text-decoration: underline;
@@ -143,6 +158,10 @@ ul {
 
 .active {
   left: 0%;
+}
+
+.burgernav:not(.active){
+  display: none;
 }
 
 .hidden {
@@ -177,6 +196,7 @@ footer {
   background-color: var(--violet);
   color: var(--almostWhite);
   padding-bottom: var(--medium-padding);
+  margin-top: var(--big-padding);
 
   .max_w_footer {
     max-width: var(--content-max-width);

@@ -8,11 +8,12 @@ export const loggedUserID = () => {
 };
 
 window.addEventListener("resize", checkHeader)
+const burgerToggle = document.querySelector(".burgertoggle")
+
 
 function checkHeader(){
 
 try {
-  const burgerToggle = document.querySelector(".burgertoggle")
   if (!burgerToggle) {
     throw new Error("Burger toggle button not found")
   }
@@ -52,6 +53,13 @@ try {
 
 
 
+} catch (error) {
+  console.error("Error setting up burger menu:", error.message)
+}
+}
+
+
+
   burgerToggle.addEventListener("click", () => {
     try {
       const burgerNav = document.querySelector(".burgernav")
@@ -70,12 +78,6 @@ try {
       console.error("Error toggling navigation:", error.message)
     }
   })
-} catch (error) {
-  console.error("Error setting up burger menu:", error.message)
-}
-
-
-}
 
 export function showToastError(message, duration = 3000) {
   const toast = document.createElement("div");

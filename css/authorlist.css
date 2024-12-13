@@ -4,6 +4,9 @@
 body{
     background-color: var(--almostWhite);
 }
+main{
+  padding-top: 4rem;
+}
 
 h1{
     text-align: center;
@@ -12,10 +15,19 @@ h1{
 
 .authors_container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin-inline: auto;
+    
+    grid-template-columns: 1fr;
+
+    @media(min-width: 769px){
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    @media(min-width: 1050px){
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .author_card{
